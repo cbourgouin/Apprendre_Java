@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercice1;
-
-import java.util.Scanner;
+package com.mycompany.exercice1;
 
 /**
  *
@@ -18,14 +16,10 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int i;
-        int multiplicateur;
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Donner le multiplicateur : ");
-        multiplicateur=sc.nextInt();
-        for(i=1; i<11; i++){
-            System.out.println(multiplicateur+" x "+i+" = "+multiplicateur*i);
-        }
+        float resultat, a = 4, b = 9, c = (float) 2.5, d = (float) 1.4;
+        resultat = a + b + c + d;
+        System.out.println(a+" + "+b+" + "+c+"+");
+        
     }
     
 }
