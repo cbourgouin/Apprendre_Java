@@ -3,26 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.exercice4;
+package edu.touchard.exercice8;
 
 /**
  *
  * @author cbourgouin
  */
 import java.util.Scanner;
-public class CodeSecret {
+public class Triangle2 {
     public static void main(String[] args) {
-        String code = "1234";
-        String donner;
-        
         Scanner sc = new Scanner(System.in);
-        donner = sc.next();
-        if(code.equals(donner)){
-            System.out.println("code bon");
-        } else {
-            System.out.println("code mauvais");
-        }
+        int nb;
+        nb = sc.nextInt();
+        sc.close();
+        int i;
+        int u;
         
+        for(i=1; i<=nb; i++){
+            for(u=1; u<=i; u++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+             
     }
     
 }
