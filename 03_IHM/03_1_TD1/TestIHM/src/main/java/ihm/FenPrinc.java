@@ -71,6 +71,11 @@ public class FenPrinc extends javax.swing.JFrame {
 
         etiSaisieCode.setText("Entrer votre code");
 
+        zoneSaisie.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                zoneSaisieCaretUpdate(evt);
+            }
+        });
         zoneSaisie.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
@@ -176,9 +181,19 @@ public class FenPrinc extends javax.swing.JFrame {
         jm2.setText("web");
 
         im4.setText("php");
+        im4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                im4ActionPerformed(evt);
+            }
+        });
         jm2.add(im4);
 
         im5.setText("javascript");
+        im5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                im5ActionPerformed(evt);
+            }
+        });
         jm2.add(im5);
 
         jm1.add(jm2);
@@ -186,6 +201,11 @@ public class FenPrinc extends javax.swing.JFrame {
         jm3.setText("structuré");
 
         im1.setText("C");
+        im1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                im1ActionPerformed(evt);
+            }
+        });
         jm3.add(im1);
 
         jm1.add(jm3);
@@ -291,30 +311,37 @@ public class FenPrinc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void im2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_im2ActionPerformed
-        // TODO add your handling code here:
+        changeText.setText("dans les languages => java selectionné");
+        System.out.println("dans les languages => java selectionné");
     }//GEN-LAST:event_im2ActionPerformed
 
     private void im3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_im3ActionPerformed
-        // TODO add your handling code here:
+        changeText.setText("dans les languages => C++ selectionné");
+        System.out.println("dans les languages => C++ selectionné");
     }//GEN-LAST:event_im3ActionPerformed
 
     private void comboEntreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEntreeActionPerformed
         changeText.setText("dans le combo => "+comboEntree.getItemAt(comboEntree.getSelectedIndex()));
+        System.out.println("dans le combo => "+comboEntree.getItemAt(comboEntree.getSelectedIndex()));
     }//GEN-LAST:event_comboEntreeActionPerformed
 
     private void checkBoxLinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxLinActionPerformed
         if(checkBoxLin.isSelected() == true){
             changeText.setText("dans la case à cocher => Linux coché");
+            System.out.println("dans la case à cocher => Linux coché");
         } else {
             changeText.setText("dans la case à cocher => Linux non coché");
+            System.out.println("dans la case à cocher => Linux non coché");
         }
     }//GEN-LAST:event_checkBoxLinActionPerformed
 
     private void checkBoxWinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxWinActionPerformed
         if(checkBoxWin.isSelected() == true){
             changeText.setText("dans la case à cocher => Windows coché");
+            System.out.println("dans la case à cocher => Windows coché");
         } else {
             changeText.setText("dans la case à cocher => Windows non coché");
+            System.out.println("dans la case à cocher => Windows non coché");
         }
     }//GEN-LAST:event_checkBoxWinActionPerformed
         
@@ -331,37 +358,69 @@ public class FenPrinc extends javax.swing.JFrame {
     }//GEN-LAST:event_zoneSaisieKeyPressed
 
     private void zoneSaisieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_zoneSaisieKeyTyped
-        // TODO add your handling code here:
+        if(zoneSaisie.getText().length() >= 4){
+            evt.consume();
+            changeText.setText("dans la zone de saisie => "+zoneSaisie.getText());
+            System.out.println("dans la zone de saisie => "+zoneSaisie.getText());
+        }else{
+            changeText.setText("dans la zone de saisie => "+zoneSaisie.getText());
+            System.out.println("dans la zone de saisie => "+zoneSaisie.getText());
+        }
     }//GEN-LAST:event_zoneSaisieKeyTyped
 
     private void listeOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeOSMouseClicked
         // TODO add your handling code here:
         changeText.setText("dans la liste => "+listeOS.getSelectedValue());
+        System.out.println("dans la liste => "+listeOS.getSelectedValue());
     }//GEN-LAST:event_listeOSMouseClicked
 
     private void zoneSaisieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoneSaisieActionPerformed
-        changeText.setText("dans la zone de saisie =>"+zoneSaisie.getText());
+        
     }//GEN-LAST:event_zoneSaisieActionPerformed
 
     private void checkBoxMacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxMacActionPerformed
         if(checkBoxMac.isSelected() == true){
             changeText.setText("dans la case à cocher => MacOS coché");
+            System.out.println("dans la case à cocher => MacOS coché");
         } else {
             changeText.setText("dans la case à cocher => MacOS non coché");
+            System.out.println("dans la case à cocher => MacOS non coché");
         }
     }//GEN-LAST:event_checkBoxMacActionPerformed
 
     private void radioLinuxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioLinuxActionPerformed
         changeText.setText("dans le radio bouton => Linux coché");
+        System.out.println("dans le radio bouton => Linux coché");
     }//GEN-LAST:event_radioLinuxActionPerformed
 
     private void radioWindowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioWindowsActionPerformed
         changeText.setText("dans le radio bouton => Windows coché");
+        System.out.println("dans le radio bouton => Windows coché");
     }//GEN-LAST:event_radioWindowsActionPerformed
 
     private void radioMacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMacActionPerformed
         changeText.setText("dans le radio bouton => MacOS coché");
+        System.out.println("dans le radio bouton => MacOS coché");
     }//GEN-LAST:event_radioMacActionPerformed
+
+    private void zoneSaisieCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_zoneSaisieCaretUpdate
+
+    }//GEN-LAST:event_zoneSaisieCaretUpdate
+
+    private void im4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_im4ActionPerformed
+        changeText.setText("dans les languages => php selectionné");
+        System.out.println("dans les languages => php selectionné");
+    }//GEN-LAST:event_im4ActionPerformed
+
+    private void im5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_im5ActionPerformed
+        changeText.setText("dans les languages => javascript selectionné");
+        System.out.println("dans les languages => javascript selectionné");
+    }//GEN-LAST:event_im5ActionPerformed
+
+    private void im1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_im1ActionPerformed
+        changeText.setText("dans les languages => C selectionné");
+        System.out.println("dans les languages => C selectionné");
+    }//GEN-LAST:event_im1ActionPerformed
 
     /**
      * @param args the command line arguments
