@@ -58,7 +58,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButtonSuite" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="jPanelPoidsIdeal" max="32767" attributes="0"/>
+              <Component id="jPanelPoidsIdeal" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -127,6 +127,7 @@
         <Component class="javax.swing.JButton" name="jButtonDevine">
           <Properties>
             <Property name="text" type="java.lang.String" value="Poids id&#xe9;al devine"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDevineActionPerformed"/>
@@ -135,6 +136,7 @@
         <Component class="javax.swing.JButton" name="jButtonLorentz">
           <Properties>
             <Property name="text" type="java.lang.String" value="Poids id&#xe9;al lorentz"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLorentzActionPerformed"/>
@@ -143,6 +145,7 @@
         <Component class="javax.swing.JButton" name="jButtonLorentzAge">
           <Properties>
             <Property name="text" type="java.lang.String" value="Poids id&#xe9;al lorentz / age"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLorentzAgeActionPerformed"/>
@@ -174,7 +177,7 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jTextFieldPrenom" max="32767" attributes="0"/>
                       <Component id="jTextFieldNom" max="32767" attributes="0"/>
-                      <Component id="jPanelSexe" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jPanelSexe" alignment="0" pref="171" max="32767" attributes="0"/>
                       <Component id="jSpinnerPoids" max="32767" attributes="0"/>
                       <Component id="jSpinnerTaille" pref="171" max="32767" attributes="0"/>
                       <Component id="jSpinnerAge" alignment="1" max="32767" attributes="0"/>

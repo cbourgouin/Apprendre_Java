@@ -26,9 +26,12 @@ public class PoidsIdeal extends javax.swing.JFrame {
         "Obésité morbide"};
     final private int NBIMC = 6;
     final private int NBCORPULENCE = 7;
+    private boolean infoVis;
 
     public PoidsIdeal() {
         initComponents();
+        jPanelPoidsIdeal.setVisible(false);
+        infoVis = true;
     }
 
     /**
@@ -75,6 +78,7 @@ public class PoidsIdeal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextAreaAfficheur);
 
         jButtonDevine.setText("Poids idéal devine");
+        jButtonDevine.setOpaque(true);
         jButtonDevine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDevineActionPerformed(evt);
@@ -82,6 +86,7 @@ public class PoidsIdeal extends javax.swing.JFrame {
         });
 
         jButtonLorentz.setText("Poids idéal lorentz");
+        jButtonLorentz.setOpaque(true);
         jButtonLorentz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonLorentzActionPerformed(evt);
@@ -89,6 +94,7 @@ public class PoidsIdeal extends javax.swing.JFrame {
         });
 
         jButtonLorentzAge.setText("Poids idéal lorentz / age");
+        jButtonLorentzAge.setOpaque(true);
         jButtonLorentzAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonLorentzAgeActionPerformed(evt);
@@ -196,7 +202,7 @@ public class PoidsIdeal extends javax.swing.JFrame {
                 .addGroup(jPanelInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jTextFieldPrenom)
                     .addComponent(jTextFieldNom)
-                    .addComponent(jPanelSexe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelSexe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(jSpinnerPoids)
                     .addComponent(jSpinnerTaille, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(jSpinnerAge))
@@ -263,7 +269,7 @@ public class PoidsIdeal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSuite)
                 .addGap(24, 24, 24)
-                .addComponent(jPanelPoidsIdeal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelPoidsIdeal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -297,6 +303,16 @@ public class PoidsIdeal extends javax.swing.JFrame {
             indiceCorpulence = NBCORPULENCE - 1;
         }
         jTextAreaAfficheur.append("\nVotre corpulence est qualifiée de " + corpulences[indiceCorpulence]);
+        
+        if(infoVis == true){
+            jPanelPoidsIdeal.setVisible(true);
+            jPanelInformations.setVisible(false);
+            infoVis = false;
+        } else {
+            jPanelPoidsIdeal.setVisible(false);
+            jPanelInformations.setVisible(true);
+            infoVis = true;
+        }
 
 
     }//GEN-LAST:event_jButtonSuiteActionPerformed
